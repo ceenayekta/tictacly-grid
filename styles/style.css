@@ -1,0 +1,543 @@
+:root {
+    --primary-color: hsl(35, 90%, 52%);
+    --box-shadow: hsl(35, 90%, 38%);
+    --bg-color: hsl(35, 90%, 5%);
+    --main-text-color: var(--bg-color);
+    --secondary-text-color: white;
+    --active-btn-shadow: var(--bg-color);
+    --sliders-bg-color: hsla(35, 90%, 5%, 0.85)
+}
+@font-face {
+    font-family: pdark;
+    src: url(../fonts/pdark.ttf);
+}
+@font-face {
+    font-family: londrina;
+    src: url(../fonts/LondrinaSolid-Regular.ttf);
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: londrina;
+    font-size: 22px;
+    letter-spacing: 1px;
+    background-color: var(--bg-color);
+}
+#body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*-------navbar styles--------*/
+#nav {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 50px;
+}
+#logo {
+    font-family: pdark;
+    line-height: 50px;
+    font-size: 30px;
+    color: var(--main-text-color);
+}
+
+/*---------players' name container--------*/
+#players-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 9;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+}
+#players-name-header-text {
+    color: var(--secondary-text-color);
+    height: 60px;
+    font-size: 26px;
+}
+.form-floating {
+    width: 90% !important;
+    color: var(--main-text-color);
+}
+#players-name-container label {
+    font-size: 1rem;
+}
+#buttons {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 350px;
+}
+#nameSubmitBtn {
+    width: 170px;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+}
+#nameSubmitBtn:active {
+    box-shadow: inset 0px 0px 10px var(--active-btn-shadow);
+}
+#nameSubmitBtn:focus {
+    outline: 0;
+}
+#skipNameBtn {
+    color: var(--primary-color);
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#skipNameBtn:active {
+    color: var(--box-shadow);
+}
+#skipNameBtn:focus {
+    outline: 0;
+}
+/*---------setting--------*/
+@keyframes setting-container-open {
+    from    {margin-left: calc(var(--width) * -1px);}
+    to      {margin-left: 0;}
+}
+@keyframes setting-container-close {
+    from    {margin-left: 0;}
+    to      {margin-left: calc(var(--width) * -1px);}
+}
+#setting-container {
+    --width: 250;
+    width: calc(var(--width) * 1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 4;
+    margin-left: calc(var(--width) * -1px);
+    height: 100vh;
+}
+#setting-container:hover {
+    animation: setting-container-open 0.5s forwards;
+}
+#setting-container:not(:hover) {
+    animation: setting-container-close 0.5s forwards;
+}
+#setting-drawer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    padding-top: 50px;
+}
+#setting-text {
+    line-height: 40px;
+    width: 180px;
+    height: 40px;
+    position: absolute;
+    z-index: 5;
+    transform: rotate(90deg);
+    margin-left: 180px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--main-text-color);
+    background-color: var(--primary-color);
+}
+#setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--sliders-bg-color);
+    border-right: 5px var(--primary-color) solid;
+    height: 100vh;
+    width: 100%; 
+    position: absolute;
+    z-index: 6;
+    text-align: center;  
+    padding-top: calc(70% + 50px);
+    padding-bottom: 70%;
+}
+/*------*/
+.dropdown a {
+    width: 170px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 22px;
+    border: none;
+    color: var(--main-text-color);
+    background-color: var(--primary-color);
+    line-height: 70px;
+    padding: 0px;
+}
+.dropdown a:hover {
+    color: var(--main-text-color);
+}
+.dropdown:focus {
+    outline: 0;
+}
+.dropdown-menu {
+    width: 170px;
+    border: 2px var(--primary-color) solid;
+    background-color: var(--bg-color);
+    padding: 0px;
+}
+.dropdown-menu span {
+    cursor: pointer;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 25px;
+}
+.dropdown-menu span:hover {
+    background-color: var(--primary-color);
+    color: var(--main-text-color);
+}
+/*------*/
+#theme-dropdown .dropdown-item {
+    height: 50px;
+}
+#orange-color:hover {
+    background-color: hsl(35, 90%, 52%);
+    color: var(--main-text-color);
+}
+#orange-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(35, 90%, 52%);
+}
+#yellow-color:hover {
+    background-color: hsl(55, 90%, 52%);
+    color: var(--main-text-color);
+}
+#yellow-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(55, 90%, 52%);
+}
+#green-color:hover {
+    background-color: hsl(95, 90%, 52%);
+    color: var(--main-text-color);
+}
+#green-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(95, 90%, 52%);
+}
+#teal-color:hover {
+    background-color: hsl(165, 90%, 52%);
+    color: var(--main-text-color);
+}
+#teal-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(165, 90%, 52%);
+}
+#lblue-color:hover {
+    background-color: hsl(195, 90%, 52%);
+    color: var(--main-text-color);
+}
+#lblue-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(195, 90%, 52%);
+}
+#dblue-color:hover {
+    background-color: hsl(205, 90%, 52%);
+    color: var(--main-text-color);
+}
+#dblue-color {
+    padding: 0px;
+    line-height: 50px;
+    color: hsl(205, 90%, 52%);
+}
+
+
+/*--------gameboard---------*/
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+#game-board {
+    margin-top: 50px;
+}
+.field {
+    padding: 0;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+.taken {
+    cursor: not-allowed;
+}
+/*------*/
+.Oshape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.circle1 {
+    background-color: var(--primary-color);
+    border-radius: 50%;  
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle2 {
+    background-color: var(--bg-color);
+    border-radius: 50%;  
+    width: 60%;
+    height: 60%;
+}
+.Xshape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.line1,
+.line2 {
+    width: 15%;
+    height: 90%;
+    background-color: var(--primary-color);
+    border-radius: 2em;
+}
+.line1 {
+    margin-right: -7.5%;
+    transform: rotate(45deg);
+}
+.line2 {
+    margin-left: -7.5%;
+    transform: rotate(-45deg);
+}
+@keyframes winCells {
+    to  {box-shadow: inset 0 0 10px var(--primary-color);}
+}
+.winCells {
+    animation: winCells 0.5s forwards;
+}
+
+/*--------scoreboard---------*/
+@keyframes scoreboard-container-open {
+    from    {margin-right: calc(var(--width) * -1px);}
+    to      {margin-right: 0;}
+}
+@keyframes scoreboard-container-close {
+    from    {margin-right: 0;}
+    to      {margin-right: calc(var(--width) * -1px);}
+}
+#scoreboard-container {
+    --width: 250;
+    width: calc(var(--width) * 1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text-color);
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    margin-right: calc(var(--width) * -1px);
+    height: 100vh;
+}
+#scoreboard-container:hover {
+    animation: scoreboard-container-open 0.5s forwards;
+}
+#scoreboard-container:not(:hover) {
+    animation: scoreboard-container-close 0.5s forwards;
+}
+#scoreboard-drawer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    padding-top: 50px;
+}
+#scoreboard-text {
+    line-height: 40px;
+    width: 180px;
+    height: 40px;
+    transform: rotate(-90deg);
+    margin-left: -110px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--main-text-color);
+    background-color: var(--primary-color);
+}
+#scoreboard {
+    background-color: var(--sliders-bg-color);
+    border-left: 5px var(--primary-color) solid;
+    height: 100vh;
+    width: 100%; 
+    position: absolute;
+    z-index: 6;
+    text-align: center;  
+    padding: 50px 5px 0px 5px;
+}
+/*------*/
+#score-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+#prev-rounds {
+    width: 100%;
+    height: calc(100vh - 120px - 50px - 50px);
+    overflow: auto;
+}
+#prev-rounds::-webkit-scrollbar {
+    width: 5px;
+}
+#prev-rounds::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+#prev-rounds::-webkit-scrollbar-thumb {
+    background: var(--primary-color); 
+    border-radius: 5px;
+}
+#prev-rounds::-webkit-scrollbar-thumb:hover {
+    background: var(--box-shadow); 
+}
+.prev-round {
+    width: 100%;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.saved-row {
+    display: flex;
+    flex-direction: row;
+}
+.saved-field {
+    padding: 0;
+    border: 1px solid var(--primary-color);
+}
+.round-result {
+    color: var(--primary-color);
+    line-height: 35px;
+}
+.rounds-divider {
+    height: 3px;
+    width: 70%;
+    margin-bottom: 5px;
+    background-color: var(--primary-color);
+    margin-top: 20px;
+}
+#restartBtn-cont {
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    padding-bottom: 10px;
+}
+#restartBtn {
+    width: 170px;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    box-shadow: 0px 10px 0px var(--box-shadow);
+}
+#restartBtn:active {
+    margin-top: 20px;
+    box-shadow: inset 0px 0px 10px var(--active-btn-shadow);
+}
+#restartBtn:focus {
+    outline: 0;
+}
+
+/*-----result------*/
+@keyframes vanish {
+    0%  {opacity: 1; visibility: visible;}
+    100%    {opacity: 0; visibility: hidden;}
+}
+@keyframes show {
+    0%  {opacity: 0; visibility: hidden;}
+    100%    {opacity: 1; visibility: visible;}
+}
+@keyframes playAgain {
+    0%      {visibility: hidden;}
+    100%    {visibility: visible;}
+}
+@keyframes result {
+    0%      {letter-spacing: 3px;}
+    50%    {letter-spacing: 1px;}
+    100%      {letter-spacing: 3px;}
+}
+#result-container {
+    position: absolute;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--sliders-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+#result {
+    color: var(--secondary-text-color);
+    animation: result linear 1s infinite;
+    font-size: 55px;
+}
+#playAgainBtn {
+    position: absolute;
+    z-index: 10;
+    margin-top: 400px;
+    width: 170px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 24px;
+    background-color: var(--primary-color);
+    border: none;
+    visibility: hidden;
+    box-shadow: 0px 10px 0px var(--box-shadow);
+    animation: playAgain 1s forwards;
+}
+#playAgainBtn:active {
+    border: none;
+    margin-top: 420px;
+    box-shadow: inset 0px 0px 10px var(--active-btn-shadow);
+}
+#playAgainBtn:focus {
+    outline: 0;
+}
+
+/*---------------*/
+@media only screen and (min-width: 445px) {
+    .form-floating {
+        max-width: 400px;
+    }
+}
