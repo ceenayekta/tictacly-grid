@@ -8,8 +8,32 @@ $('#welcome').on('click', function() {
 })
 
 //------login form----------
+
+function passwordGenerator() {
+    let date = new Date();
+    let password = date.getFullYear();
+    return 'Demo' + password;
+};
+
+function initPassword() {
+    $('#password-hint').html(passwordGenerator());
+}
+initPassword();
+
+function fakeLogin({ email, password }) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (email === 'Demo' && password === passwordGenerator()) {
+                resolve({ data: { token: 'logging-in-succeed' } });
+            } else {
+                reject();
+            }
+        }, 1000);
+    });
+}
+
 function loginFunc() {
-    let url = 'https://demo.ali-chv.com/api/login',
+    // let url = 'https://acustomdomain.com/api/login',
     username = $('#usernameInput').val(),
     password = $('#passwordInput').val();
 
@@ -25,19 +49,28 @@ function loginFunc() {
     if (/[0-9]/.test(password) && /(?=.*[a-z])/.test(password) && /(?=.*[A-Z])/.test(password)) {
         $('#login-text').text(''),
         $('.shape').removeClass('d-none'),
-        axios.post(
-            url,
-            {
-                "email": username,
-                "password": password
-            },
-            {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            })
+
+        // commented due domain is not available anymore
+        // using custom async function instead
+        
+        // axios.post(
+        //     url,
+        //     {
+        //         "email": username,
+        //         "password": password
+        //     },
+        //     {
+        //         "Accept": "application/json",
+        //         "Content-Type": "application/json"
+        //     })
+
+        fakeLogin({
+            "email": username,
+            "password": password
+        })
         .then(function (response) {
             $('#match-error').addClass('d-none');
-            response.data.data.token ? window.location.href='game.html' : loginError();
+            response.data.token ? window.location.href='game.html' : loginError();
         })
         .catch(function () {
             loginError()

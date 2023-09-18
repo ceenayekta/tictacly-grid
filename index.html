@@ -22,7 +22,17 @@
     </div>
 
     <div class="login-card d-flex justify-content-center flex-column">
-        <span id="text">you should login first</span>
+        <span id="text">You should login first...</span>
+        <div id="hint-wrapper">
+            <div>
+                Username:
+                <span class="label">Demo</span>
+            </div>
+            <div>
+                Password:
+                <span class="label" id="password-hint">Current Year</span>
+            </div>
+        </div>
         <div class="form-floating mb-2 mx-auto">
             <input type="email" class="form-control shadow-none" id="usernameInput" placeholder="0">
             <label for="usernameInput">Username</label>
@@ -31,11 +41,11 @@
             <input type="password" class="form-control shadow-none" id="passwordInput" placeholder="0">
             <label for="passwordInput">Password</label>
         </div>
-        <small class="m-auto text-danger my-0 mb-2 d-none" id="empty-error">- username and password fields can't be empty</small>
-        <small class="m-auto text-danger my-0 mb-2 d-none" id="number-error">- password should contains at least one number</small>
-        <small class="m-auto text-danger my-0 mb-2 d-none" id="lowercase-error">- password should contains at least one lowercase letter</small>
-        <small class="m-auto text-danger my-0 mb-2 d-none" id="uppercase-error">- password should contains at least one uppercase letter</small>
-        <small class="m-auto text-danger my-0 mb-2 d-none" id="match-error">- username and password doesn't match.</small>
+        <small class="m-auto text-danger my-0 mb-2 d-none" id="empty-error">- Username and password fields can't be empty</small>
+        <small class="m-auto text-danger my-0 mb-2 d-none" id="number-error">- Password should contains at least one number</small>
+        <small class="m-auto text-danger my-0 mb-2 d-none" id="lowercase-error">- Password should contains at least one lowercase letter</small>
+        <small class="m-auto text-danger my-0 mb-2 d-none" id="uppercase-error">- Password should contains at least one uppercase letter</small>
+        <small class="m-auto text-danger my-0 mb-2 d-none" id="match-error">- Username and password doesn't match.</small>
         <button type="button" class="btn mx-auto shadow-none" id="loginBtn" onclick="loginFunc()">
             <div class="shape d-none">
                 <div class="line1"></div>
