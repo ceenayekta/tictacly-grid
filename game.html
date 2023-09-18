@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tic-Tac-Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "images/favicon.png" type = "image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="body">
+        <div id="nav">
+            <span id="logo">tic tac toe</span>
+        </div>
+        
+        <div id="players-name-container">
+            <small id="players-name-header-text">Please insert players' name</small>
+            <div class="form-floating mb-2 mx-auto">
+                <input type="text" class="form-control shadow-none" id="player1Input" placeholder="0">
+                <label for="player2Input">Player 1</label>
+            </div>
+            <div class="form-floating mb-2 mx-auto">
+                <input type="text" class="form-control shadow-none" id="player2Input" placeholder="0">
+                <label for="player2Input">Player 2</label>
+            </div>
+            <small class="m-auto text-danger my-0 mb-2 d-none" id="player1-input-error">- Insert player 1's name</small>
+            <small class="m-auto text-danger my-0 mb-2 d-none" id="player2-input-error">- Insert player 2's name</small>
+            <small class="m-auto text-danger my-0 mb-2 d-none" id="same-names-error">- You can't use same names</small>
+            <div id="buttons">
+                <button type="button" id="nameSubmitBtn">Submit</button>
+                <button type="button" id="skipNameBtn">skip</button>
+            </div>
+
+        </div>
+
+        <div id="setting-container">
+            <div id="setting-drawer">
+                <div id="setting-text">Setting</div>
+            </div>
+            <div id="setting">   
+                <div class="dropdown show" id="theme-dropdown">
+                    <a class="btn dropdown-toggle shadow-none" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    color
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <span class="dropdown-item" id="orange-color" onclick="color('orange')">orange</span>
+                        <span class="dropdown-item" id="yellow-color" onclick="color('yellow')">yellow</span>
+                        <span class="dropdown-item" id="green-color" onclick="color('green')">green</span>
+                        <span class="dropdown-item" id="teal-color" onclick="color('teal')">teal</span>
+                        <span class="dropdown-item" id="lblue-color" onclick="color('lblue')">light blue</span>
+                        <span class="dropdown-item" id="dblue-color" onclick="color('dblue')">dark blue</span>
+                    </div>
+                </div> 
+                <div class="dropdown show" id="mode-dropdown">
+                    <a class="btn dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mode: 3 X 3
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <span class="dropdown-item" onclick="mode(3)">3 X 3</span>
+                        <span class="dropdown-item" onclick="mode(5)">5 X 5</span>
+                        <span class="dropdown-item" onclick="mode(7)">7 X 7</span>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div id="board-container">
+            <div id="game-board"></div>      
+        </div>
+
+        <div id="scoreboard-container">
+            <div id="scoreboard-drawer">
+                <div id="scoreboard-text">Scoreboard</div>
+            </div>
+            <div id="scoreboard">
+                <div id="score-cont">
+                    <span class="score"></span>
+                </div>
+                <div id="prev-rounds"></div>
+                <div id="restartBtn-cont">
+                    <button type="button" id="restartBtn">restart</button>
+                </div>                  
+            </div>
+        </div>
+
+        <div id="result-container">    
+            <span id="result"></span>
+            <button class="d-none" type="button" id="playAgainBtn">play again!</button>        
+        </div>        
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

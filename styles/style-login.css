@@ -1,0 +1,172 @@
+:root {
+    --bg-color: hsl(35, 90%, 5%);
+    --primary-color: hsl(35, 90%, 52%);
+}
+@font-face {
+    font-family: pdark;
+    src: url(../fonts/pdark.ttf);
+}
+@font-face {
+    font-family: londrina;
+    src: url(../fonts/LondrinaSolid-Regular.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body,
+#welcome,
+.login-card {
+    width: 100vw;
+    height: 100vh;
+}
+body {
+    background-color: var(--bg-color);
+}
+
+/*-----welcome styles------*/
+#welcome {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    background-color: var(--bg-color);
+    font-family: londrina;
+    text-align: center;
+}
+#welcomeTo {
+    font-family: londrina;
+    font-size: 35px;
+    animation: vanish 0.3s forwards 2s;
+    color: var(--primary-color);
+}
+#welcome div h1 {
+    font-family: pdark;
+    letter-spacing: 5px;
+    font-size: 55px;
+    margin-bottom: 80px;
+    animation:  h1 0.5s forwards 3s;
+}
+.T {
+    color: var(--primary-color);
+}
+#blinker {
+    letter-spacing: 3px;
+    margin: auto;
+    animation:  blinker 1.5s infinite;
+}
+#blinker span {
+    animation: click 0.5s forwards 5.5s;
+}
+@keyframes blinker {
+    0%  {opacity: 1;}
+    50%  {opacity: 0;}
+    100%  {opacity: 1;}
+}
+@keyframes click {
+    to  {font-size: 24px; color: var(--primary-color);}
+}
+@keyframes vanish {
+    0%  {opacity: 1; visibility: visible;}
+    100%    {opacity: 0; visibility: hidden;}
+}
+@keyframes h1 {
+    0%  {font-size: 55px; margin-bottom: 80px;}
+    100%  {font-size: 40px; margin-bottom: 0px;}
+}
+
+/*-----login styles------*/
+#nav {
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    background-color: var(--primary-color);
+    width: 100vw;
+}
+#logo {
+    font-family: pdark;
+    font-size: 30px;
+    color: black;
+}
+#text {
+    margin: 20px auto;
+    font-family: londrina;
+    font-size: 26px;
+    color: white;
+}
+.login-card {
+    font-family: londrina;
+    letter-spacing: 1px;
+}
+.form-floating {
+    width: 90% !important;
+    color: black;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 70px;
+    border-radius: 5px;
+    border: solid 2px var(--primary-color);
+    color: var(--primary-color);
+    font-size: 22px;
+}
+.btn:hover {
+    background-color: var(--primary-color);
+    border: none;
+}
+.btn:active {
+    box-shadow: inset 0px 0px 10px black !important;
+}
+
+/*------api loader------*/
+.shape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    border: var(--primary-color) 4px solid;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+    animation: anim 2s infinite linear;
+}
+.line1,
+.line2 {
+    width: 4px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 2em;
+}
+.line1 {
+    position: absolute;
+    z-index: 101;
+    transform: rotate(45deg);
+}
+.line2 {
+    position: absolute;
+    z-index: 100;
+    transform: rotate(-45deg);
+}
+.btn:hover .shape {
+    border: var(--bg-color) 4px solid;
+}
+.btn:hover .line1,
+.btn:hover .line2 {
+    background-color: var(--bg-color);
+}
+
+
+@keyframes anim {
+    from {transform: rotateZ(-360deg)};
+    to {transform: rotateZ(360deg)};
+}
+/*----------------*/
+@media only screen and (min-width: 445px) {
+    .form-floating {
+        max-width: 400px;
+    }
+}
