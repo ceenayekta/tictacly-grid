@@ -1,6 +1,6 @@
 # Tictacly Grid
 A fancy Tic Tac Toe game! It has multiple modes to play, changeable themes and saved played rounds in scoreboard.  
-Explore more in demo: [Netlify Built](https://tictaclygrid.netlify.app/) | [github-pages](https://sinaaghdasiyekta.github.io/tictacly-grid/).
+Explore more in demo: [Netlify Built](https://tictaclygrid.netlify.app/) | [github-pages](https://ceenayekta.github.io/tictacly-grid/).
 
 ### Features
 **Setting Drawer**
